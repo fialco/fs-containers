@@ -1,0 +1,57 @@
+root@974ebc205868:/# apt install -y curl
+
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  ca-certificates krb5-locales libbrotli1 libcurl4t64 libgssapi-krb5-2 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-common libldap2 libnghttp2-14 libpsl5t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libssh-4 libssl3t64 openssl publicsuffix
+Suggested packages:
+  krb5-doc krb5-user libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal libsasl2-modules-ldap libsasl2-modules-otp libsasl2-modules-sql
+The following NEW packages will be installed:
+  ca-certificates curl krb5-locales libbrotli1 libcurl4t64 libgssapi-krb5-2 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-common libldap2 libnghttp2-14 libpsl5t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libssh-4 openssl publicsuffix
+The following packages will be upgraded:
+  libssl3t64
+1 upgraded, 21 newly installed, 0 to remove and 45 not upgraded.
+Need to get 5496 kB of archives.
+After this operation, 9173 kB of additional disk space will be used.
+.
+.
+.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+
+root@974ebc205868:/# curl -sL https://deb.nodesource.com/setup_24.x | bash
+
+2026-07-29 07:37:11 - Installing pre-requisites
+Hit:1 http://archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+.
+.
+.
+Fetched 19.8 kB in 0s (51.0 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+42 packages can be upgraded. Run 'apt list --upgradable' to see them.
+2026-07-29 07:37:17 - Repository configured successfully.
+2026-07-29 07:37:17 - To install Node.js, run: apt install nodejs -y
+2026-07-29 07:37:17 - You can use N|solid Runtime as a node.js alternative
+2026-07-29 07:37:17 - To install N|solid Runtime, run: apt install nsolid -y
+
+
+root@974ebc205868:/# apt install -y nodejs
+
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+.
+.
+.
+running python rtupdate hooks for python3.12...
+running python post-rtupdate hooks for python3.12...
+Setting up nodejs (24.18.0-1nodesource1) ...
+
+root@974ebc205868:/# node /usr/src/app/index.js
+Hello World
