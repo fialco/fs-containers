@@ -1,0 +1,29 @@
+
+
+###
+
+GET http://localhost:3000/todos/
+
+###
+
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+ "text": "Fix routes"
+}
+
+###
+
+PUT http://localhost:3000/todos/6a6acffff754191cfe1d69ac
+Content-Type: application/json
+
+{
+ "text": "Fix routes and test them with requests",
+ "done": true
+}
+
+###
+
+DELETE http://localhost:3000/todos/6a6a5884b7bb88b92fa9edf8
+
