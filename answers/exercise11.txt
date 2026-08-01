@@ -1,0 +1,49 @@
+$ docker exec -it todo-backend-redis-1 bash
+root@ae15ed2f9db5:/data# redis-cli
+
+127.0.0.1:6379> keys added_todos
+1) "added_todos"
+
+127.0.0.1:6379> help
+redis-cli 8.8.1
+To get help about Redis commands type:
+      "help @<group>" to get a list of commands in <group>
+      "help <command>" for help on <command>
+      "help <tab>" to get a list of possible help topics
+      "quit" to exit
+
+To set redis-cli preferences:
+      ":set hints" enable online hints
+      ":set nohints" disable online hints
+Set your preferences in ~/.redisclirc
+127.0.0.1:6379> help KEYS
+
+  KEYS pattern
+  summary: Returns all key names that match a pattern.
+  since: 1.0.0
+  group: generic
+
+
+127.0.0.1:6379> get added_todos
+"2"
+
+127.0.0.1:6379> set added_todos 9001
+OK
+127.0.0.1:6379> get added_todos
+"9001"
+
+*Added new todo*
+
+127.0.0.1:6379> get added_todos
+"9002"
+
+127.0.0.1:6379> DELEX added_todos
+(integer) 1
+
+127.0.0.1:6379> get added_todos
+(nil)
+
+*Added new todo*
+
+127.0.0.1:6379> get added_todos
+"1"
