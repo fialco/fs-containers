@@ -1,11 +1,13 @@
 FROM node:24 AS build-stage
 WORKDIR /usr/src/app
 
-COPY . .
+COPY --chown=node:node . .
 
 RUN npm ci
 
 ENV VITE_BACKEND_URL=http://localhost:3000
+
+USER node
 
 RUN npm run test && npm run build
 
