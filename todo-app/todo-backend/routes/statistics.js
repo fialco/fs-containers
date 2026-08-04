@@ -11,7 +11,7 @@ router.get('/', async (_, res) => {
     await redis.set('added_todos', added_todos);
   }
 
-  res.json({ added_todos: added_todos });
+  res.json({ added_todos: parseInt(added_todos) });
 });
 
 module.exports = router;

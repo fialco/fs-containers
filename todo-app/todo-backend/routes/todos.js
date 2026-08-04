@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
   added_todos++;
   await redis.set('added_todos', added_todos);
 
-  res.send(todo);
+  res.status(200).json(todo);
 });
 
 const singleRouter = express.Router();
@@ -41,7 +41,7 @@ const findByIdMiddleware = async (req, res, next) => {
 /* DELETE todo. */
 singleRouter.delete('/', async (req, res) => {
   await req.todo.delete();
-  res.sendStatus(200);
+  res.sendStatus(204);
 });
 
 /* GET todo. */
@@ -51,13 +51,15 @@ singleRouter.get('/', async (req, res) => {
 
 /* PUT todo. */
 singleRouter.put('/', async (req, res) => {
-  await Todo.updateOne(
+  const update = await Todo.findOneAndUpdate(
     { _id: req.todo._id },
     {
       $set: { text: req.body.text, done: req.body.done },
     },
+    { returnDocument: 'after' },
   );
-  res.sendStatus(200);
+
+  res.status(200).json(update);
 });
 
 router.use('/:id', findByIdMiddleware, singleRouter);
