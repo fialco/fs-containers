@@ -1,11 +1,11 @@
 import Todo from './Todo'
 
 const TodoList = ({ todos, deleteTodo, completeTodo }) => {
-  const onClickDelete = (todo) => () => {
+  const onClickDelete = (todo) => {
     deleteTodo(todo)
   }
 
-  const onClickComplete = (todo) => () => {
+  const onClickComplete = (todo) => {
     completeTodo(todo)
   }
 
