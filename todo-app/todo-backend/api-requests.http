@@ -6,20 +6,22 @@ POST http://localhost:3000/todos/
 Content-Type: application/json
 
 {
- "text": "Fix routes"
+ "text": "fix routes"
 }
 
 ###
 
-PUT http://localhost:8080/api/todos/6a6acffff754191cfe1d69ac
+# Add id of todo you want to update in the url such as 6a6a5884b7bb88b92fa9edf8
+PUT http://localhost:8080/api/todos/
 Content-Type: application/json
 
 {
- "text": "PÄIVITYS",
+ "text": "Fix routes!",
  "done": true
 }
 
 ###
 
-DELETE http://localhost:3000/todos/6a6a5884b7bb88b92fa9edf8
+# Add id of todo you want to delete in the url such as 6a6a5884b7bb88b92fa9edf8
+DELETE http://localhost:3000/todos/
 
